@@ -78,41 +78,58 @@
                   src="./assets/Group 1000008448.svg"
                   alt="Illustration"
                   class="img-fluid"
+                  data-target="#modal1"
+                  data-bs-dismiss="modal"
                 />
               </div>
+
               <div class="col">
                 <img
                   src="./assets/Group 1000008447.svg"
                   alt="Illustration"
                   class="img-fluid"
+                  data-target="#modal2"
+                  data-bs-dismiss="modal"
                 />
               </div>
+
               <div class="col">
                 <img
                   src="./assets/Group 1000008447(1).svg"
                   alt="Illustration"
                   class="img-fluid"
+                  data-target="#modal3"
+                  data-bs-dismiss="modal"
                 />
               </div>
+
               <div class="col">
                 <img
                   src="./assets/Group 1000008453.svg"
                   alt="Illustration"
                   class="img-fluid"
+                  data-target="#modal4"
+                  data-bs-dismiss="modal"
                 />
               </div>
+
               <div class="col">
                 <img
                   src="./assets/Group 1000008452.svg"
                   alt="Illustration"
                   class="img-fluid"
+                  data-target="#modal5"
+                  data-bs-dismiss="modal"
                 />
               </div>
+
               <div class="col">
                 <img
                   src="./assets/Group 1000008451.svg"
                   alt="Illustration"
                   class="img-fluid"
+                  data-target="#modal6"
+                  data-bs-dismiss="modal"
                 />
               </div>
             </div>
@@ -121,16 +138,315 @@
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      const startWorkButton = document.getElementById("startWorkButton");
-      const popupModal = new bootstrap.Modal(
-        document.getElementById("popupModal")
-      );
+    <!-- Secondary Modals -->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background-color: #e0e0e0">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body" style="position: relative">
+            <div
+              style="
+                width: 100%;
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 50px;
+              "
+            >
+              <img
+                src="./assets/first-svg-dialog/Group 1000008335.svg"
+                alt="Illustration"
+                data-target="#modal6"
+                data-bs-dismiss="modal"
+                style="height: 250px; width: 100%"
+              />
 
-      startWorkButton.addEventListener("click", () => {
-        popupModal.show();
-      });
-    </script>
+              <img
+                src="./assets/first-svg-dialog/Object.svg"
+                alt="Illustration"
+                data-target="#modal1"
+                data-bs-dismiss="modal"
+                style="height: 200px; width: 100px; margin-top: 50px"
+              />
+            </div>
+
+            <div
+              style="
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 50px;
+                background-color: #fff;
+                margin-top: 20px;
+                border-radius: 10px;
+                padding: 5px;
+              "
+            >
+              <img
+                src="./assets/first-svg-dialog/Group 1000008026.svg"
+                alt="Illustration"
+                class="img-fluid"
+                data-target="#modal2"
+                data-bs-dismiss="modal"
+                style="height: 80px; width: 80px"
+              />
+
+              <div style="text-align: center">
+                <h4>Multi Selection</h4>
+                <h6>File Size H 812 - W 350</h6>
+                <p>MP4-JPG Or PNG - Max 5 Image</p>
+              </div>
+            </div>
+
+            <div
+              style="
+                position: absolute;
+                bottom: -7%;
+                left: 0;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+              "
+            >
+              <div
+                style="
+                  outline: none;
+                  width: 50px;
+                  height: 40px;
+                  background-color: #fff;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: 10px;
+                "
+              >
+                <img src="./assets/first-svg-dialog/Group 1000008245.svg" />
+              </div>
+
+              <div
+                id="createButton"
+                data-target="#modal7"
+                style="
+                  outline: none;
+                  width: 100px;
+                  height: 40px;
+                  background-color: #fff;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: 10px;
+                  gap: 5px;
+                "
+              >
+                Create
+                <img src="./assets/first-svg-dialog/Path_2-2.svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Modal 2 Content</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Content for the second image.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Modal 3 Content</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Content for the third image.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Modal 4 Content</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Content for the fourth image.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Modal 5 Content</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Content for the fifth image.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5>Modal 6 Content</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Content for the sixth image.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal7" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div
+            class="modal-body"
+            style="width: 100%; height: 100%; position: relative"
+          >
+            <img src="./assets/second-svg-dialog/image 1425.svg" />
+
+            <div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                "
+              >
+                <img
+                  src="./assets/first-svg-dialog/Group 1000008247.svg"
+                  alt=""
+                />
+
+                <img
+                  src="./assets/first-svg-dialog/Group 1000008247.svg"
+                  alt=""
+                />
+              </div>
+
+              <div
+                style="
+                  width: 100%;
+                  padding: 5px;
+                  background-color: #deeff0ab;
+                  border-radius: 10px;
+                "
+              >
+                <textarea
+                  name=""
+                  id=""
+                  placeholder="Type Your Text.."
+                  style="
+                    background-color: #defdffe0;
+                    border-radius: 10px;
+                    width: 100%;
+                    font-weight: bold;
+                    outline: none;
+                    border: none;
+                    padding: 10px;
+                  "
+                ></textarea>
+                <div
+                  style="
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    padding-top: 5px;
+                  "
+                >
+                  <img
+                    style="width: 100px; height: 90px"
+                    src="./assets/first-svg-dialog/Group 1000008246.svg"
+                    alt=""
+                  />
+
+                  <img
+                    style="width: 100px; height: 90px"
+                    src="./assets/first-svg-dialog/Group 1000008246.svg"
+                    alt=""
+                  />
+
+                  <img
+                    style="width: 100px; height: 90px"
+                    src="./assets/first-svg-dialog/Group 1000008246.svg"
+                    alt=""
+                  />
+
+                  <img
+                    style="width: 100px; height: 90px"
+                    src="./assets/first-svg-dialog/Group 1000008246.svg"
+                    alt=""
+                  />
+
+                  <img
+                    style="width: 100px; height: 90px"
+                    src="./assets/first-svg-dialog/Group 1000008246.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
