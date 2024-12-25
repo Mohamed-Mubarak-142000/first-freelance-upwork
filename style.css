@@ -42,3 +42,46 @@
 .header-popup h5 {
   font-weight: 300;
 }
+
+.active-thumbnail {
+  border: 2px solid blue;
+}
+
+.toggle-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+.toggle-item {
+  text-align: center;
+  width: 100px;
+  background-color: #e0e0e0;
+  padding: 5px;
+  border-radius: 10px;
+}
+.form-switch .form-check-input {
+  width: 2.5rem;
+  height: 1.25rem;
+  background-color: #b4b4b4;
+  border-radius: 1.25rem;
+}
+.form-switch .form-check-input:checked {
+  background-color: #0d6efd;
+}
+.toggle-item span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1b1e34;
+}
+
+.bg-model-image {
+  background-image: url("./assets/third-svg-dialog/image\ 1425\(1\).svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
