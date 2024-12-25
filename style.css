@@ -85,3 +85,30 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.form-control {
+  border-radius: 8px;
+  background-color: #f7fafc;
+}
+.input-group-text {
+  border: none;
+  background-color: transparent;
+}
+.icon-input-group {
+  background-color: #f7fafc;
+  border-radius: 8px;
+  /* border: 1px solid #e2e8f0; */
+}
+/* Remove the arrow from the select element */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  padding-right: 1.5rem; /* Ensure alignment */
+}
+/* Optional: Add padding for better layout */
+select:focus {
+  outline: none;
+}
