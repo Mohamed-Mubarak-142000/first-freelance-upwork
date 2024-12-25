@@ -50,6 +50,66 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const createButton = document.getElementById("unlimitedButton");
+  createButton.addEventListener("click", () => {
+    const currentModal = bootstrap.Modal.getInstance(
+      document.getElementById("modal2")
+    );
+    currentModal.hide();
+    const targetModalId = createButton.getAttribute("data-target");
+    const targetModal = new bootstrap.Modal(
+      document.querySelector(targetModalId)
+    );
+    targetModal.show();
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const createButton = document.getElementById("limitedButton");
+  createButton.addEventListener("click", () => {
+    const currentModal = bootstrap.Modal.getInstance(
+      document.getElementById("modal2")
+    );
+    currentModal.hide();
+    const targetModalId = createButton.getAttribute("data-target");
+    const targetModal = new bootstrap.Modal(
+      document.querySelector(targetModalId)
+    );
+    targetModal.show();
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const createButton = document.getElementById("limitedButton2");
+  createButton.addEventListener("click", () => {
+    const currentModal = bootstrap.Modal.getInstance(
+      document.getElementById("modal10")
+    );
+    currentModal.hide();
+    const targetModalId = createButton.getAttribute("data-target");
+    const targetModal = new bootstrap.Modal(
+      document.querySelector(targetModalId)
+    );
+    targetModal.show();
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const createButton = document.getElementById("unlimitedButton");
+  createButton.addEventListener("click", () => {
+    const currentModal = bootstrap.Modal.getInstance(
+      document.getElementById("modal2")
+    );
+    currentModal.hide();
+    const targetModalId = createButton.getAttribute("data-target");
+    const targetModal = new bootstrap.Modal(
+      document.querySelector(targetModalId)
+    );
+    targetModal.show();
+  });
+});
+
 function changeMainImage(src) {
   const mainImage = document.getElementById("mainImage");
   mainImage.src = src;
