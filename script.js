@@ -442,6 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
     targetModal.show();
   });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll("#backButtonToModal1");
 
@@ -479,41 +480,434 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // الحصول على جميع الحاويات وعناصر الإدخال
-  const previewContainers = document.querySelectorAll(".previewContainer");
-  const fileInputs = document.querySelectorAll(".fileInput");
+  const addImageButton = document.getElementById("addImageButton");
+  const previewContainerWrapper = document.getElementById(
+    "previewContainerWrapper"
+  );
 
-  // التأكد من وجود الحاويات والإدخالات
-  if (!previewContainers.length || !fileInputs.length) {
-    console.error("لا توجد عناصر مطابقة.");
-    return;
+  function validateFile(file, callback) {
+    const allowedTypes = ["image/jpeg", "image/png", "video/mp4"];
+    if (!allowedTypes.includes(file.type)) {
+      alert("Only MP4, JPG, or PNG files are allowed.");
+      return callback(false);
+    }
+
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      if (file.type.startsWith("image")) {
+        img.onload = () => {
+          if (img.width <= 350 && img.height <= 812) {
+            callback(true);
+          } else {
+            alert("Image dimensions must be 350x812 pixels or smaller.");
+            callback(false);
+          }
+        };
+        img.src = e.target.result;
+      } else {
+        callback(true);
+      }
+    };
+
+    reader.onerror = () => {
+      alert("Error loading the file.");
+      callback(false);
+    };
+
+    reader.readAsDataURL(file);
   }
 
-  // تطبيق الوظيفة على كل حاوية وإدخال
-  previewContainers.forEach((container, index) => {
-    const input = fileInputs[index];
+  function handleFileInput(inputElement) {
+    inputElement.addEventListener("change", (event) => {
+      const files = Array.from(event.target.files);
 
-    if (container && input) {
-      input.addEventListener("change", (event) => {
-        const file = event.target.files[0];
-        if (file) {
-          const reader = new FileReader();
+      // Check if more than 5 images are being uploaded
+      if (previewContainerWrapper.children.length + files.length > 6) {
+        alert("You can only upload a maximum of 5 images.");
+        inputElement.value = "";
+        return;
+      }
 
-          reader.onload = (e) => {
-            container.style.background = `url(${e.target.result}) no-repeat center center`;
-            container.style.backgroundSize = "cover";
-          };
+      files.forEach((file) => {
+        validateFile(file, (isValid) => {
+          if (isValid) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              // Create new preview container for the new image
+              const newPreviewContainer = document.createElement("div");
+              newPreviewContainer.classList.add("previewContainer");
+              newPreviewContainer.style =
+                "height: 100px; width: 80px; display: flex; justify-content: center; align-items: center; background: url(" +
+                e.target.result +
+                ") no-repeat center center; background-size: contain; cursor: pointer; border-radius: 10px;";
 
-          reader.onerror = () => {
-            console.error("حدث خطأ أثناء تحميل الصورة.");
-          };
+              // Create file input inside the new preview container
+              const input = document.createElement("input");
+              input.type = "file";
+              input.classList.add("fileInput");
+              input.style =
+                "opacity: 0; width: 100%; height: 20px; cursor: pointer; ;";
 
-          reader.readAsDataURL(file);
-        } else {
-          console.warn("لم يتم اختيار ملف.");
-        }
+              // Append input to the new preview container
+              newPreviewContainer.appendChild(input);
+
+              // Append the new preview container to the wrapper
+              previewContainerWrapper.appendChild(newPreviewContainer);
+
+              // Apply the handler for new file inputs
+              handleFileInput(input);
+
+              // Check if 5 images are uploaded and hide addImageButton
+              if (previewContainerWrapper.children.length >= 5) {
+                addImageButton.style.display = "none";
+              }
+            };
+            reader.readAsDataURL(file);
+          } else {
+            inputElement.value = "";
+          }
+        });
       });
+
+      // Toggle the visibility of addImageButton based on the number of images in previewContainerWrapper
+      if (previewContainerWrapper.children.length === 0) {
+        addImageButton.style.display = "block";
+      } else {
+        addImageButton.style.display = "none";
+      }
+    });
+  }
+
+  // Apply to all preview containers
+  const fileInputs = document.querySelectorAll(".fileInput");
+  fileInputs.forEach((input) => {
+    handleFileInput(input);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const addImageButton = document.getElementById("addImageButtonModel2");
+  const previewContainerWrapperModel2 = document.getElementById(
+    "previewContainerWrapperModel2"
+  );
+
+  function validateFile(file, callback) {
+    const allowedTypes = ["image/jpeg", "image/png", "video/mp4"];
+    if (!allowedTypes.includes(file.type)) {
+      alert("Only MP4, JPG, or PNG files are allowed.");
+      return callback(false);
     }
+
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      if (file.type.startsWith("image")) {
+        img.onload = () => {
+          if (img.width <= 350 && img.height <= 812) {
+            callback(true);
+          } else {
+            alert("Image dimensions must be 350x812 pixels or smaller.");
+            callback(false);
+          }
+        };
+        img.src = e.target.result;
+      } else {
+        callback(true);
+      }
+    };
+
+    reader.onerror = () => {
+      alert("Error loading the file.");
+      callback(false);
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  function handleFileInput(inputElement) {
+    inputElement.addEventListener("change", (event) => {
+      const files = Array.from(event.target.files);
+
+      // Check if more than 5 images are being uploaded
+      if (previewContainerWrapperModel2.children.length + files.length > 6) {
+        alert("You can only upload a maximum of 5 images.");
+        inputElement.value = "";
+        return;
+      }
+
+      files.forEach((file) => {
+        validateFile(file, (isValid) => {
+          if (isValid) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              // Create new preview container for the new image
+              const newPreviewContainer = document.createElement("div");
+              newPreviewContainer.classList.add("previewContainerModel2");
+              newPreviewContainer.style =
+                "height: 100px; width: 80px; display: flex; justify-content: center; align-items: center; background: url(" +
+                e.target.result +
+                ") no-repeat center center; background-size: contain; cursor: pointer; border-radius: 10px;";
+
+              // Create file input inside the new preview container
+              const input = document.createElement("input");
+              input.type = "file";
+              input.classList.add("fileInput");
+              input.style =
+                "opacity: 0; width: 100%; height: 20px; cursor: pointer; ;";
+
+              // Append input to the new preview container
+              newPreviewContainer.appendChild(input);
+
+              // Append the new preview container to the wrapper
+              previewContainerWrapperModel2.appendChild(newPreviewContainer);
+
+              // Apply the handler for new file inputs
+              handleFileInput(input);
+
+              // Check if 5 images are uploaded and hide addImageButton
+              if (previewContainerWrapperModel2.children.length >= 5) {
+                addImageButton.style.display = "none";
+              }
+            };
+            reader.readAsDataURL(file);
+          } else {
+            inputElement.value = "";
+          }
+        });
+      });
+
+      // Toggle the visibility of addImageButton based on the number of images in previewContainerWrapperModel2
+      if (previewContainerWrapperModel2.children.length === 0) {
+        addImageButton.style.display = "block";
+      } else {
+        addImageButton.style.display = "none";
+      }
+    });
+  }
+
+  // Apply to all preview containers
+  const fileInputs = document.querySelectorAll(".fileInput");
+  fileInputs.forEach((input) => {
+    handleFileInput(input);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const addImageButton = document.getElementById("addImageButtonModel10");
+  const previewContainerWrapperModel3 = document.getElementById(
+    "previewContainerWrapperModel10"
+  );
+
+  function validateFile(file, callback) {
+    const allowedTypes = ["image/jpeg", "image/png", "video/mp4"];
+    if (!allowedTypes.includes(file.type)) {
+      alert("Only MP4, JPG, or PNG files are allowed.");
+      return callback(false);
+    }
+
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      if (file.type.startsWith("image")) {
+        img.onload = () => {
+          if (img.width <= 350 && img.height <= 812) {
+            callback(true);
+          } else {
+            alert("Image dimensions must be 350x812 pixels or smaller.");
+            callback(false);
+          }
+        };
+        img.src = e.target.result;
+      } else {
+        callback(true);
+      }
+    };
+
+    reader.onerror = () => {
+      alert("Error loading the file.");
+      callback(false);
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  function handleFileInput(inputElement) {
+    inputElement.addEventListener("change", (event) => {
+      const files = Array.from(event.target.files);
+
+      // Check if more than 5 images are being uploaded
+      if (previewContainerWrapperModel10.children.length + files.length > 6) {
+        alert("You can only upload a maximum of 5 images.");
+        inputElement.value = "";
+        return;
+      }
+
+      files.forEach((file) => {
+        validateFile(file, (isValid) => {
+          if (isValid) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              // Create new preview container for the new image
+              const newPreviewContainer = document.createElement("div");
+              newPreviewContainer.classList.add("previewContainerModel10");
+              newPreviewContainer.style =
+                "height: 100px; width: 80px; display: flex; justify-content: center; align-items: center; background: url(" +
+                e.target.result +
+                ") no-repeat center center; background-size: contain; cursor: pointer; border-radius: 10px;";
+
+              // Create file input inside the new preview container
+              const input = document.createElement("input");
+              input.type = "file";
+              input.classList.add("fileInput");
+              input.style =
+                "opacity: 0; width: 100%; height: 20px; cursor: pointer; ;";
+
+              // Append input to the new preview container
+              newPreviewContainer.appendChild(input);
+
+              // Append the new preview container to the wrapper
+              previewContainerWrapperModel10.appendChild(newPreviewContainer);
+
+              // Apply the handler for new file inputs
+              handleFileInput(input);
+
+              // Check if 5 images are uploaded and hide addImageButton
+              if (previewContainerWrapperModel10.children.length >= 5) {
+                addImageButton.style.display = "none";
+              }
+            };
+            reader.readAsDataURL(file);
+          } else {
+            inputElement.value = "";
+          }
+        });
+      });
+
+      // Toggle the visibility of addImageButton based on the number of images in previewContainerWrapperModel10
+      if (previewContainerWrapperModel10.children.length === 0) {
+        addImageButton.style.display = "block";
+      } else {
+        addImageButton.style.display = "none";
+      }
+    });
+  }
+
+  // Apply to all preview containers
+  const fileInputs = document.querySelectorAll(".fileInput");
+  fileInputs.forEach((input) => {
+    handleFileInput(input);
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const addImageButton = document.getElementById("addImageButtonModel3");
+  const previewContainerWrapperModel3 = document.getElementById(
+    "previewContainerWrapperModel3"
+  );
+
+  function validateFile(file, callback) {
+    const allowedTypes = ["image/jpeg", "image/png", "video/mp4"];
+    if (!allowedTypes.includes(file.type)) {
+      alert("Only MP4, JPG, or PNG files are allowed.");
+      return callback(false);
+    }
+
+    const img = new Image();
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      if (file.type.startsWith("image")) {
+        img.onload = () => {
+          if (img.width <= 350 && img.height <= 812) {
+            callback(true);
+          } else {
+            alert("Image dimensions must be 350x812 pixels or smaller.");
+            callback(false);
+          }
+        };
+        img.src = e.target.result;
+      } else {
+        callback(true);
+      }
+    };
+
+    reader.onerror = () => {
+      alert("Error loading the file.");
+      callback(false);
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  function handleFileInput(inputElement) {
+    inputElement.addEventListener("change", (event) => {
+      const files = Array.from(event.target.files);
+
+      // Check if more than 5 images are being uploaded
+      if (previewContainerWrapperModel3.children.length + files.length > 6) {
+        alert("You can only upload a maximum of 5 images.");
+        inputElement.value = "";
+        return;
+      }
+
+      files.forEach((file) => {
+        validateFile(file, (isValid) => {
+          if (isValid) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              // Create new preview container for the new image
+              const newPreviewContainer = document.createElement("div");
+              newPreviewContainer.classList.add("previewContainerModel3");
+              newPreviewContainer.style =
+                "height: 100px; width: 80px; display: flex; justify-content: center; align-items: center; background: url(" +
+                e.target.result +
+                ") no-repeat center center; background-size: contain; cursor: pointer; border-radius: 10px;";
+
+              // Create file input inside the new preview container
+              const input = document.createElement("input");
+              input.type = "file";
+              input.classList.add("fileInput");
+              input.style =
+                "opacity: 0; width: 100%; height: 20px; cursor: pointer; ;";
+
+              // Append input to the new preview container
+              newPreviewContainer.appendChild(input);
+
+              // Append the new preview container to the wrapper
+              previewContainerWrapperModel3.appendChild(newPreviewContainer);
+
+              // Apply the handler for new file inputs
+              handleFileInput(input);
+
+              // Check if 5 images are uploaded and hide addImageButton
+              if (previewContainerWrapperModel3.children.length >= 5) {
+                addImageButton.style.display = "none";
+              }
+            };
+            reader.readAsDataURL(file);
+          } else {
+            inputElement.value = "";
+          }
+        });
+      });
+
+      // Toggle the visibility of addImageButton based on the number of images in previewContainerWrapperModel3
+      if (previewContainerWrapperModel3.children.length === 0) {
+        addImageButton.style.display = "block";
+      } else {
+        addImageButton.style.display = "none";
+      }
+    });
+  }
+
+  // Apply to all preview containers
+  const fileInputs = document.querySelectorAll(".fileInput");
+  fileInputs.forEach((input) => {
+    handleFileInput(input);
   });
 });
 

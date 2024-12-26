@@ -176,31 +176,42 @@
               />
 
               <div
-                class="previewContainer"
-                style="
-                  height: 250px;
-                  width: 100%;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  background: url('./assets/first-svg-dialog/Object.svg')
-                    no-repeat center center;
-                  background-size: contain;
-                  cursor: pointer;
-                  border-radius: 10px;
-                "
+                id="previewContainerWrapper"
+                style="width: 100%; display: flex; gap: 10px; flex-wrap: wrap"
               >
-                <input
-                  type="file"
-                  class="fileInput"
+                <div
+                  class="previewContainer"
                   style="
-                    opacity: 0;
                     width: 100%;
-                    height: 100%;
-                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-size: contain;
                     cursor: pointer;
+                    border-radius: 10px;
                   "
-                />
+                >
+                  <img
+                    src="./assets/first-svg-dialog/Object.svg"
+                    alt="Illustration"
+                    data-target="#modal6"
+                    data-bs-dismiss="modal"
+                    style="height: 250px; width: 100%"
+                    id="addImageButton"
+                  />
+
+                  <input
+                    type="file"
+                    class="fileInput"
+                    style="
+                      opacity: 0;
+                      width: 100%;
+                      height: 100%;
+                      position: absolute;
+                      cursor: pointer;
+                    "
+                  />
+                </div>
               </div>
             </div>
 
@@ -240,7 +251,7 @@
             <div
               style="
                 position: absolute;
-                bottom: -7%;
+                bottom: -10%;
                 left: 0;
                 width: 100%;
                 display: flex;
@@ -376,31 +387,50 @@
               "
             >
               <div
-                class="previewContainer"
+                id="previewContainerWrapperModel2"
                 style="
-                  height: 250px;
                   width: 100%;
                   display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  background: url('./assets/first-svg-dialog/Object.svg')
-                    no-repeat center center;
-                  background-size: contain;
-                  cursor: pointer;
-                  border-radius: 10px;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                  position: relative;
                 "
               >
-                <input
-                  type="file"
-                  class="fileInput"
+                <div
+                  class="previewContainerModel2"
                   style="
-                    opacity: 0;
                     width: 100%;
-                    height: 100%;
-                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-size: contain;
                     cursor: pointer;
+                    border-radius: 10px;
                   "
-                />
+                >
+                  <img
+                    src="./assets/first-svg-dialog/Object.svg"
+                    alt="Illustration"
+                    data-target="#modal6"
+                    data-bs-dismiss="modal"
+                    style="height: 250px; width: 100%"
+                    id="addImageButtonModel2"
+                  />
+
+                  <input
+                    type="file"
+                    class="fileInput"
+                    style="
+                      opacity: 0;
+                      width: 100%;
+                      height: 100%;
+                      position: absolute;
+                      cursor: pointer;
+                      left: 0;
+                      top: 0;
+                    "
+                  />
+                </div>
               </div>
 
               <div
@@ -704,31 +734,50 @@
                 "
               >
                 <div
-                  class="previewContainer"
+                  id="previewContainerWrapperModel3"
                   style="
-                    height: 250px;
                     width: 100%;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background: url('./assets/first-svg-dialog/Object.svg')
-                      no-repeat center center;
-                    background-size: contain;
-                    cursor: pointer;
-                    border-radius: 10px;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    position: relative;
                   "
                 >
-                  <input
-                    type="file"
-                    class="fileInput"
+                  <div
+                    class="previewContainerModel3"
                     style="
-                      opacity: 0;
                       width: 100%;
-                      height: 100%;
-                      position: absolute;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      background-size: contain;
                       cursor: pointer;
+                      border-radius: 10px;
                     "
-                  />
+                  >
+                    <img
+                      src="./assets/first-svg-dialog/Object.svg"
+                      alt="Illustration"
+                      data-target="#modal6"
+                      data-bs-dismiss="modal"
+                      style="height: 250px; width: 100%"
+                      id="addImageButtonModel3"
+                    />
+
+                    <input
+                      type="file"
+                      class="fileInput"
+                      style="
+                        opacity: 0;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        cursor: pointer;
+                        left: 0;
+                        top: 0;
+                      "
+                    />
+                  </div>
                 </div>
 
                 <div
@@ -2410,19 +2459,50 @@
               "
             >
               <div
+                id="previewContainerWrapperModel10"
                 style="
+                  width: 100%;
                   display: flex;
-                  flex-direction: column;
-                  align-items: center;
+                  gap: 10px;
+                  flex-wrap: wrap;
+                  position: relative;
                 "
               >
-                <img
-                  src="./assets/first-svg-dialog/Object.svg"
-                  alt="Illustration"
-                  data-target="#modal1"
-                  data-bs-dismiss="modal"
-                  style="height: 100px; width: 100px; margin-top: 50px"
-                />
+                <div
+                  class="previewContainerModel10"
+                  style="
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-size: contain;
+                    cursor: pointer;
+                    border-radius: 10px;
+                  "
+                >
+                  <img
+                    src="./assets/first-svg-dialog/Object.svg"
+                    alt="Illustration"
+                    data-target="#modal6"
+                    data-bs-dismiss="modal"
+                    style="height: 250px; width: 100%"
+                    id="addImageButtonModel10"
+                  />
+
+                  <input
+                    type="file"
+                    class="fileInput"
+                    style="
+                      opacity: 0;
+                      width: 100%;
+                      height: 100%;
+                      position: absolute;
+                      cursor: pointer;
+                      left: 0;
+                      top: 0;
+                    "
+                  />
+                </div>
               </div>
 
               <div
