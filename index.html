@@ -79,7 +79,7 @@
             <div class="row row-cols-2 row-cols-md-3 g-3">
               <div class="col">
                 <img
-                  src="./assets/Group 1000008448.svg"
+                  src="./assets/first-svg-dialog/Frame 1000008484.svg"
                   alt="Illustration"
                   class="img-fluid"
                   data-target="#modal1"
@@ -145,16 +145,18 @@
     <!-- Secondary Modals -->
     <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content" style="background-color: #f8f9fa">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body" style="position: relative">
+        <div
+          class="modal-content"
+          style="background-color: #f8f9fa; padding: 5px"
+        >
+          <div
+            class="modal-body"
+            style="
+              position: relative;
+              border: 2px dashed gray;
+              border-radius: 10px;
+            "
+          >
             <div
               style="
                 width: 100%;
@@ -174,37 +176,31 @@
               />
 
               <div
+                class="previewContainer"
                 style="
+                  height: 250px;
+                  width: 100%;
                   display: flex;
-                  flex-direction: column;
+                  justify-content: center;
                   align-items: center;
+                  background: url('./assets/first-svg-dialog/Object.svg')
+                    no-repeat center center;
+                  background-size: contain;
+                  cursor: pointer;
+                  border-radius: 10px;
                 "
               >
-                <label
-                  for="fileInput"
+                <input
+                  type="file"
+                  class="fileInput"
                   style="
-                    height: 250px;
-                    width: 100px;
-                    margin-top: 50px;
-                    display: block;
-                    background: url('./assets/first-svg-dialog/Object.svg')
-                      no-repeat center center;
-                    background-size: contain;
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
                     cursor: pointer;
                   "
-                >
-                  <input
-                    type="file"
-                    id="fileInput"
-                    style="
-                      opacity: 0;
-                      width: 100%;
-                      height: 100%;
-                      position: absolute;
-                      cursor: pointer;
-                    "
-                  />
-                </label>
+                />
               </div>
             </div>
 
@@ -222,16 +218,20 @@
               "
             >
               <img
+                id="displayImage2"
                 src="./assets/first-svg-dialog/Group 1000008026.svg"
                 alt="Illustration"
                 class="img-fluid"
-                data-target="#modal2"
-                data-bs-dismiss="modal"
-                style="height: 80px; width: 80px"
+                style="height: 80px; width: 80px; cursor: pointer"
               />
-
+              <input
+                type="file"
+                id="imageUploader2"
+                accept="image/*"
+                style="display: none"
+              />
               <div style="text-align: center">
-                <h4>Multi Selection</h4>
+                <h4>Another Selection</h4>
                 <h6>File Size H 812 - W 350</h6>
                 <p>MP4-JPG Or PNG - Max 5 Image</p>
               </div>
@@ -376,45 +376,31 @@
               "
             >
               <div
+                class="previewContainer"
                 style="
+                  height: 250px;
+                  width: 100%;
                   display: flex;
-                  flex-direction: column;
+                  justify-content: center;
                   align-items: center;
+                  background: url('./assets/first-svg-dialog/Object.svg')
+                    no-repeat center center;
+                  background-size: contain;
+                  cursor: pointer;
+                  border-radius: 10px;
                 "
               >
-                <div
+                <input
+                  type="file"
+                  class="fileInput"
                   style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    cursor: pointer;
                   "
-                >
-                  <label
-                    for="fileInput"
-                    style="
-                      height: 100px;
-                      width: 100px;
-                      margin-top: 50px;
-                      display: block;
-                      background: url('./assets/first-svg-dialog/Object.svg')
-                        no-repeat center center;
-                      background-size: contain;
-                      cursor: pointer;
-                    "
-                  >
-                    <input
-                      type="file"
-                      id="fileInput"
-                      style="
-                        opacity: 0;
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        cursor: pointer;
-                      "
-                    />
-                  </label>
-                </div>
+                />
               </div>
 
               <div
@@ -718,37 +704,31 @@
                 "
               >
                 <div
+                  class="previewContainer"
                   style="
+                    height: 250px;
+                    width: 100%;
                     display: flex;
-                    flex-direction: column;
+                    justify-content: center;
                     align-items: center;
+                    background: url('./assets/first-svg-dialog/Object.svg')
+                      no-repeat center center;
+                    background-size: contain;
+                    cursor: pointer;
+                    border-radius: 10px;
                   "
                 >
-                  <label
-                    for="fileInput"
+                  <input
+                    type="file"
+                    class="fileInput"
                     style="
-                      height: 100px;
-                      width: 100px;
-                      margin-top: 50px;
-                      display: block;
-                      background: url('./assets/first-svg-dialog/Object.svg')
-                        no-repeat center center;
-                      background-size: contain;
+                      opacity: 0;
+                      width: 100%;
+                      height: 100%;
+                      position: absolute;
                       cursor: pointer;
                     "
-                  >
-                    <input
-                      type="file"
-                      id="fileInput"
-                      style="
-                        opacity: 0;
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        cursor: pointer;
-                      "
-                    />
-                  </label>
+                  />
                 </div>
 
                 <div
@@ -966,16 +946,18 @@
         class="modal-dialog modal-dialog-centered"
         style="position: relative"
       >
-        <div class="modal-content container" style="background-color: #e0e0e0">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body" style="padding: 3px; position: relative">
+        <div
+          class="modal-content container"
+          style="background-color: #e0e0e0; padding: 5px"
+        >
+          <div
+            class="modal-body"
+            style="
+              position: relative;
+              border: 2px dashed gray;
+              border-radius: 10px;
+            "
+          >
             <div
               style="
                 width: 100%;
@@ -995,37 +977,32 @@
               />
 
               <div
+                class="previewContainer"
                 style="
+                  height: 250px;
+                  width: 100%;
+                  margin: 10px 0;
                   display: flex;
-                  flex-direction: column;
+                  justify-content: center;
                   align-items: center;
+                  background: url('./assets/first-svg-dialog/Object.svg')
+                    no-repeat center center;
+                  background-size: contain;
+                  cursor: pointer;
+                  border-radius: 10px;
                 "
               >
-                <label
-                  for="fileInput"
+                <input
+                  type="file"
+                  class="fileInput"
                   style="
-                    height: 250px;
-                    width: 100px;
-                    margin-top: 50px;
-                    display: block;
-                    background: url('./assets/first-svg-dialog/Object.svg')
-                      no-repeat center center;
-                    background-size: contain;
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
                     cursor: pointer;
                   "
-                >
-                  <input
-                    type="file"
-                    id="fileInput"
-                    style="
-                      opacity: 0;
-                      width: 100%;
-                      height: 100%;
-                      position: absolute;
-                      cursor: pointer;
-                    "
-                  />
-                </label>
+                />
               </div>
             </div>
 
@@ -1040,17 +1017,22 @@
                 margin-top: 20px;
                 border-radius: 10px;
                 padding: 5px;
+                margin-bottom: 10px;
               "
             >
               <img
+                id="displayImage2"
                 src="./assets/first-svg-dialog/Group 1000008026.svg"
                 alt="Illustration"
                 class="img-fluid"
-                data-target="#modal2"
-                data-bs-dismiss="modal"
-                style="height: 80px; width: 80px"
+                style="height: 80px; width: 80px; cursor: pointer"
               />
-
+              <input
+                type="file"
+                id="imageUploader2"
+                accept="image/*"
+                style="display: none"
+              />
               <div style="text-align: center">
                 <h4>Multi Selection</h4>
                 <h6>File Size H 812 - W 350</h6>
@@ -1161,45 +1143,31 @@
               "
             >
               <div
+                class="previewContainer"
                 style="
+                  height: 250px;
+                  width: 100%;
                   display: flex;
-                  flex-direction: column;
+                  justify-content: center;
                   align-items: center;
+                  background: url('./assets/first-svg-dialog/Object.svg')
+                    no-repeat center center;
+                  background-size: contain;
+                  cursor: pointer;
+                  border-radius: 10px;
                 "
               >
-                <div
+                <input
+                  type="file"
+                  class="fileInput"
                   style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    cursor: pointer;
                   "
-                >
-                  <label
-                    for="fileInput"
-                    style="
-                      height: 100px;
-                      width: 100px;
-                      margin-top: 50px;
-                      display: block;
-                      background: url('./assets/first-svg-dialog/Object.svg')
-                        no-repeat center center;
-                      background-size: contain;
-                      cursor: pointer;
-                    "
-                  >
-                    <input
-                      type="file"
-                      id="fileInput"
-                      style="
-                        opacity: 0;
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        cursor: pointer;
-                      "
-                    />
-                  </label>
-                </div>
+                />
               </div>
 
               <div
@@ -1466,45 +1434,31 @@
               "
             >
               <div
+                class="previewContainer"
                 style="
+                  height: 250px;
+                  width: 100%;
                   display: flex;
-                  flex-direction: column;
+                  justify-content: center;
                   align-items: center;
+                  background: url('./assets/first-svg-dialog/Object.svg')
+                    no-repeat center center;
+                  background-size: contain;
+                  cursor: pointer;
+                  border-radius: 10px;
                 "
               >
-                <div
+                <input
+                  type="file"
+                  class="fileInput"
                   style="
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    cursor: pointer;
                   "
-                >
-                  <label
-                    for="fileInput"
-                    style="
-                      height: 100px;
-                      width: 100px;
-                      margin-top: 50px;
-                      display: block;
-                      background: url('./assets/first-svg-dialog/Object.svg')
-                        no-repeat center center;
-                      background-size: contain;
-                      cursor: pointer;
-                    "
-                  >
-                    <input
-                      type="file"
-                      id="fileInput"
-                      style="
-                        opacity: 0;
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-                        cursor: pointer;
-                      "
-                    />
-                  </label>
-                </div>
+                />
               </div>
 
               <div

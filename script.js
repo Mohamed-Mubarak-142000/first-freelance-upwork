@@ -478,6 +478,45 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  // الحصول على جميع الحاويات وعناصر الإدخال
+  const previewContainers = document.querySelectorAll(".previewContainer");
+  const fileInputs = document.querySelectorAll(".fileInput");
+
+  // التأكد من وجود الحاويات والإدخالات
+  if (!previewContainers.length || !fileInputs.length) {
+    console.error("لا توجد عناصر مطابقة.");
+    return;
+  }
+
+  // تطبيق الوظيفة على كل حاوية وإدخال
+  previewContainers.forEach((container, index) => {
+    const input = fileInputs[index];
+
+    if (container && input) {
+      input.addEventListener("change", (event) => {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = (e) => {
+            container.style.background = `url(${e.target.result}) no-repeat center center`;
+            container.style.backgroundSize = "cover";
+          };
+
+          reader.onerror = () => {
+            console.error("حدث خطأ أثناء تحميل الصورة.");
+          };
+
+          reader.readAsDataURL(file);
+        } else {
+          console.warn("لم يتم اختيار ملف.");
+        }
+      });
+    }
+  });
+});
+
 function changeMainImage(src) {
   const mainImage = document.getElementById("mainImage");
   mainImage.src = src;
